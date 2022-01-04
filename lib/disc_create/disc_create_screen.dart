@@ -45,10 +45,10 @@ class _disc_create_screenState extends State<disc_create_screen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
@@ -56,6 +56,7 @@ class _disc_create_screenState extends State<disc_create_screen> {
           style: TextStyle(
               color: Color.fromRGBO(22, 97, 207, 10),
               fontSize: 18,
+
               fontWeight: FontWeight.bold),
         ),
         actions: [

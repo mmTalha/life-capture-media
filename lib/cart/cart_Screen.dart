@@ -6,7 +6,9 @@ import 'package:untitled/cart/Checkout_screen.dart';
 import 'package:untitled/login/shippingadree.dart';
 
 class cart_Screen extends StatelessWidget {
-  const cart_Screen({Key? key}) : super(key: key);
+  const
+
+  cart_Screen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,10 @@ class cart_Screen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(

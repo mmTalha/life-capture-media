@@ -11,8 +11,8 @@ class select_new_Address_screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<String> valuestate = [
       'Alaska',
-      ' Alabama',
-      ' Arkansas',
+      'Alabama',
+      'Arkansas',
       'Arizona',
       'California',
       'Colorado',
@@ -21,12 +21,12 @@ class select_new_Address_screen extends StatelessWidget {
       'Delaware',
       'Florida',
       'Georgia',
-      ' Hawaii',
+      'Hawaii',
       'Iowa',
-      ' Idaho',
+      'Idaho',
       'Illinois',
-      ' Indiana',
-      ' Kansas',
+      'Indiana',
+      'Kansas',
       'Kentucky',
       'Louisiana',
       'Massachusetts',
@@ -34,26 +34,26 @@ class select_new_Address_screen extends StatelessWidget {
       'Maine',
       'Michigan',
       'Minnesota',
-      ' Missouri',
+      'Missouri',
       'Mississippi',
       'Montana',
       'North Carolina',
-      ' North Dakota',
+      'North Dakota',
       'Nebraska',
       'New Hampshire',
       'New Jersey',
-      ' New Mexico',
+      'New Mexico',
       'Nevada',
       'New York',
       'Ohio',
-      ' Oklahoma',
-      ' Oregon',
+      'Oklahoma',
+      'Oregon',
       'Pennsylvania',
       'Rhode  Island ',
       'South Carolina',
       'South Dakota',
       'Tennessee',
-      ' Texas',
+      'Texas',
       'Utah',
       'Virginia',
       'Vermont',
@@ -65,10 +65,10 @@ class select_new_Address_screen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
@@ -86,7 +86,7 @@ class select_new_Address_screen extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
-                      fontSize: 25),
+                    fontSize: 18,),
                 ))),
                 SizedBox(
                   height: 5,
@@ -219,6 +219,7 @@ class select_new_Address_screen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: TextDropdownFormField(
+
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return 'Please enter state';

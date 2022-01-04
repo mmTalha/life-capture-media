@@ -385,7 +385,8 @@ class _Shipping_addressState extends State<Shipping_address> {
                   Consumer<mainprovider>(builder: (context, provider, child) {
                     return spinner
                         ? CircularProgressIndicator()
-                        : Container(
+                        :
+                    Container(
                             height: 40,
                             width: 110,
                             child: MaterialButton(

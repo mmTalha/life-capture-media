@@ -17,7 +17,7 @@ class Thankyou_screen extends StatelessWidget {
             'Thank you for your order!',
             style: TextStyle(
                 color: Color.fromRGBO(22, 97, 207, 10),
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w400),
           )),
           Center(
@@ -34,7 +34,7 @@ class Thankyou_screen extends StatelessWidget {
                 'LifeCapture 93c34sdetgh',
                 style: TextStyle(
                     color: Color.fromRGBO(22, 97, 207, 10),
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400),
               )),
           Center(

@@ -35,7 +35,10 @@ class _Login_ScreenState extends State<Login_Screen> {
                       child: Container(
                           child: Text(
                     'Hi, Claire!',
-                    style: TextStyle(color: Colors.black, fontSize: 25,fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                   ))),
                   SizedBox(
                     height: 10,
@@ -49,7 +52,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         style: TextStyle(
                             color: Colors.orange,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                          fontSize: 18,),
                       ),
                       SizedBox(
                         height: 20,
@@ -152,22 +155,21 @@ class _Login_ScreenState extends State<Login_Screen> {
                                     // padding:
                                     //     const EdgeInsets.only(right: 35 / 1),
                                     child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Forgot_Paswword_Screen()),
-                                        );
-                                      },
-                                      child: const Text(
-                                        "Forgot Username/Password?",
-                                        style: TextStyle(
-                                          color:
-                                              Color.fromRGBO(22, 97, 207, 10),
-                                        ),
-                                      ),
-                                    )))
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Forgot_Paswword_Screen()),
+                                    );
+                                  },
+                                  child: const Text(
+                                    "Forgot Username/Password?",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(22, 97, 207, 10),
+                                    ),
+                                  ),
+                                )))
                           ],
                         ),
                       ),
@@ -216,8 +218,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                       text: "User Agreement ",
                       style: TextStyle(
                         color: Colors.deepPurple,
-                          fontSize: 12,
-
+                        fontSize: 12,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
@@ -242,7 +243,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                       text: "Privacy Policy",
                       style: TextStyle(
                         color: Colors.deepPurple,
-                          fontSize: 12,
+                        fontSize: 12,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {

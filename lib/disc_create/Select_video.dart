@@ -22,10 +22,10 @@ class _Select_sort_video_ScreenState extends State<Select_sort_video_Screen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
@@ -51,7 +51,7 @@ class _Select_sort_video_ScreenState extends State<Select_sort_video_Screen> {
                     'Enter Your Disc Title',
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500),
                   ),
                   SizedBox(

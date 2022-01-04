@@ -239,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         color: Colors.orange,
                         fontWeight: FontWeight.bold,
-                        fontSize: 25),
+                      fontSize: 18,),
                   ))),
                   SizedBox(
                     height: 5,

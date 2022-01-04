@@ -27,7 +27,7 @@ class Home_Screen extends StatelessWidget {
             'Dashboard',
             style: TextStyle(
                 color: Color.fromRGBO(22, 97, 207, 10),
-                fontSize: 25,
+              fontSize: 18,
                 fontWeight: FontWeight.bold,),
           ),
           actions: [

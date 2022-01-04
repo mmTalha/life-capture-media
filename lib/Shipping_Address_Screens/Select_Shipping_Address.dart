@@ -19,10 +19,10 @@ class Select_Shipping_address_Screen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
@@ -104,19 +104,17 @@ class Select_Shipping_address_Screen extends StatelessWidget {
             Center(
               child: Container(
                 height: 40,
-                width: 140,
+                width: 145,
                 child: MaterialButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   color: Color.fromRGBO(22, 97, 207, 10),
-                  child: Center(
-                    child: Text(
-                      'Add New Address',
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
+                  child: Text(
+                    'Add New Address',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.white,
+
                     ),
                   ),
                   onPressed: () {
