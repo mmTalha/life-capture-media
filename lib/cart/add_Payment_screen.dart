@@ -1,24 +1,40 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/cart/cart_Screen.dart';
 import 'package:untitled/cart/thank_you.dart';
+import 'package:untitled/login/Dashboard_screens/Drawer.dart';
 import 'package:untitled/login/loginscreen.dart';
+import 'package:untitled/provider/widgets.dart';
 
-class add_Payment_screen extends StatefulWidget {
-  const add_Payment_screen({Key? key}) : super(key: key);
+class add_Payment_screen extends StatelessWidget {
+  final String? img;
+  final String? title;
+  const add_Payment_screen({Key? key, this.img, this.title}) : super(key: key);
 
-  @override
-  _add_Payment_screenState createState() => _add_Payment_screenState();
-}
-
-class _add_Payment_screenState extends State<add_Payment_screen> {
   @override
   Widget build(BuildContext context) {
     bool agree = false;
+
     return Scaffold(
       backgroundColor: Colors.white,
+      drawerScrimColor: Colors.black,
       appBar: AppBar(
+        leadingWidth: 100,
+        leading: widget().appbar(),
         centerTitle: true,
-
-
+        iconTheme: IconThemeData(color: Colors.black),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => cart_Screen()),
+              );
+            },
+            icon: Icon(CupertinoIcons.cart_fill),
+            color: Colors.black,
+          )
+        ],
         // leading: IconButton(
         //   icon: Icon(Icons.arrow_back, color: Colors.black),
         //   onPressed: () => Navigator.of(context).pop(),
@@ -26,13 +42,14 @@ class _add_Payment_screenState extends State<add_Payment_screen> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
-          'Add Payment',
+          title!,
           style: TextStyle(
-              color: Color.fromRGBO(22, 97, 207, 10),
-              fontSize: 18,
+              color:widget().colorheading,
+              fontSize: widget().headingsize,
               fontWeight: FontWeight.bold),
         ),
       ),
+      drawer: drawer_Screen(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -247,7 +264,7 @@ class _add_Payment_screenState extends State<add_Payment_screen> {
                     ),
                   ),
                   SizedBox(
-                    height:5,
+                    height: 5,
                   ),
                   // Text(
                   //   'Save Card',
@@ -256,63 +273,11 @@ class _add_Payment_screenState extends State<add_Payment_screen> {
                   //     fontSize: 15,
                   //   ),
                   // ),
-
-
-
                 ],
               ),
             ),
           ),
-          Center(
-            child: Container(
-              padding: EdgeInsets.only(left:40,right: 40.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment. spaceBetween,
-                children: [
-                  Text(
-                    'Save Card',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                    ),
-                  ),
-                  Container(
 
-                    padding: EdgeInsets.all(2),
-
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(156,204,101,10),
-                       borderRadius: BorderRadius.circular(10)
-                    ),
-                    height:30,
-                    width:85,
-                    child: StatefulBuilder(
-                        builder: (BuildContext context, StateSetter setState) {
-                          return  Center(
-                            child: Row(
-
-                              children: <Widget>[
-                                Text('Save',style: TextStyle(color: Colors.white,),),
-                                Checkbox(
-
-                                  checkColor: Color.fromRGBO(156,204,101,10),
-                                  activeColor: Colors.white,
-                                  materialTapTargetSize: MaterialTapTargetSize. padded,
-                                  value: agree,
-                                  onChanged: (bool? value) {
-                                    setState(() => agree = value!);
-                                  },
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              ),
-            ),
-          ),
 
           // Container(
           //   height: 40,
@@ -335,12 +300,12 @@ class _add_Payment_screenState extends State<add_Payment_screen> {
           //       }),
           // ),
           SizedBox(
-            height: 80,
+            height: 30,
           ),
           Center(
             child: Container(
-              height: 40,
-              width: 110,
+              height: widget().height,
+              width: widget().width,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
@@ -350,12 +315,13 @@ class _add_Payment_screenState extends State<add_Payment_screen> {
                   style: TextStyle(
                     fontFamily: 'Roboto',
                     color: Colors.white,
+                    fontSize: widget().fontsize,
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Thankyou_screen()),
+                    CupertinoPageRoute(builder: (context) => Thankyou_screen()),
                   );
                 },
               ),

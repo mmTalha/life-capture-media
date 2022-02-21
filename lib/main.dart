@@ -12,12 +12,15 @@ import 'package:untitled/login/shippingadree.dart';
 import 'package:untitled/login/user-Affrement.dart';
 import 'package:untitled/provider/provider.dart';
 import 'package:us_states/us_states.dart';
+import 'package:untitled/provider/widgets.dart';
 
 import 'login/privacy_policy.dart';
 
 void main() {
 
-  SystemChrome.setEnabledSystemUIOverlays([]);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor:Color.fromRGBO(22, 97, 207, 10),
+  ));
   runApp(
     MultiProvider(
       providers: [
@@ -32,11 +35,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
+
+
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        iconTheme: IconThemeData(color: Colors.black),
+        fontFamily: 'Roboto'
+        ,
       backgroundColor: Colors.white,
         // This is the theme of your application.
         //
@@ -65,7 +74,7 @@ class _MyHomeState extends State<MyHome> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () => splash = true);
+    Timer(Duration(seconds: 1), () => splash = true);
     // Navigator.pushReplacement(context,
     // MaterialPageRoute(builder: (context) => onboradingscreen_1()
     // )
@@ -94,10 +103,10 @@ class _MyHomeState extends State<MyHome> {
             child: Center(child: Image.asset('images/last.png', height: 130)),
           ),
           SizedBox(
-            height: 50,
+            height: 30,
           ),
           FutureBuilder(
-              future: Future.delayed(Duration(seconds: 3)),
+              future: Future.delayed(Duration(seconds: 2)),
               builder: (c, s) => s.connectionState != ConnectionState.done
                   ? Container(
                       height: 40,
@@ -121,7 +130,7 @@ class _MyHomeState extends State<MyHome> {
                                 style: TextStyle(
                                     fontFamily: 'Roboto',
                                     color: Colors.white,
-                                    fontSize: 12),
+                                    fontSize: widget().fontsize),
                               ),
                               onPressed: () {
                                 Navigator.push(
@@ -142,11 +151,11 @@ class _MyHomeState extends State<MyHome> {
                                   borderRadius: BorderRadius.circular(10)),
                               color: Color.fromRGBO(22, 97, 207, 10),
                               child: Text(
-                                'Sign In',
+                                'Sign in',
                                 style: TextStyle(
                                     fontFamily: 'Roboto',
                                     color: Colors.white,
-                                    fontSize: 12),
+                                    fontSize: widget().fontsize),
                               ),
                               onPressed: () {
                                 Navigator.push(
@@ -198,6 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController Emailaddress = TextEditingController();
   TextEditingController confirmemailaddress = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController username = TextEditingController();
   int? agelimit = 12;
 
   calculateAge(DateTime birthDate) {
@@ -235,11 +245,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Center(
                       child: Container(
                           child: Text(
-                    'Create Your Account',
+                    'Create your account',
                     style: TextStyle(
                         color: Colors.orange,
                         fontWeight: FontWeight.bold,
-                      fontSize: 18,),
+                      fontSize: widget().headingsize,),
                   ))),
                   SizedBox(
                     height: 5,
@@ -249,11 +259,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                     children: [
                       Text(
-                        'LifeCapture Media does not share any of',
+                        'LifeCapture Media’s does not share any of',
                         style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       Text(
-                        'your Information in any way. ',
+                        'your information in any way ',
                         style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       SizedBox(
@@ -272,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   controller: firstname,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter first name';
+                                      return 'Please enter Your first name';
                                     }
                                     return null;
                                   },
@@ -282,7 +292,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                       prefixStyle:
                                           TextStyle(color: Colors.grey),
-                                      hintText: 'First Name',
+                                      hintText: 'First name',
                                       enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),
@@ -321,7 +331,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   controller: lastname,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter Last name';
+                                      return 'Please enter Your last name';
                                     }
                                     return null;
                                   },
@@ -331,7 +341,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                       prefixStyle:
                                           TextStyle(color: Colors.grey),
-                                      hintText: 'Last Name',
+                                      hintText: 'Last name',
                                       enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),
@@ -360,6 +370,56 @@ class _MyHomePageState extends State<MyHomePage> {
                             SizedBox(
                               height: 5,
                             ),
+                            Container(
+                              width: 310,
+                              child: Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: TextFormField(
+                                  textCapitalization:
+                                  TextCapitalization.sentences,
+                                  controller: username,
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Please enter Your username';
+                                    }
+                                    return null;
+                                  },
+                                  decoration: InputDecoration(
+                                      hintStyle: TextStyle(
+                                        fontFamily: 'Roboto',
+                                      ),
+                                      prefixStyle:
+                                      TextStyle(color: Colors.grey),
+                                      hintText: 'User name',
+                                      enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          borderSide: BorderSide(
+                                            color: Colors.grey,
+                                          )),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          borderSide: BorderSide(
+                                            color: Colors.grey,
+                                          )),
+                                      errorBorder: OutlineInputBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          borderSide:
+                                          BorderSide(color: Colors.red)),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          borderSide:
+                                          BorderSide(color: Colors.red))),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+
                             GestureDetector(
                               child: Container(
                                 width: 310,
@@ -397,7 +457,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     controller: dateofbirth,
                                     validator: (value) {
                                       if (value == null || value.isEmpty) {
-                                        return 'Please enter Date of Birth';
+                                        return 'Please enter Your date of birth';
                                       }
                                       if (agelimit! < 18) {
                                         return 'You must be at least 18 years old to use this service. ';
@@ -417,7 +477,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                         prefixStyle:
                                             TextStyle(color: Colors.grey),
-                                        hintText: 'Date of Birth ',
+                                        hintText: 'Date of birth ',
                                         enabledBorder: OutlineInputBorder(
                                             borderRadius:
                                                 BorderRadius.circular(10),
@@ -457,7 +517,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   controller: Emailaddress,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter Email Address';
+                                      return 'Please enter Your email address';
                                     }
                                     return null;
                                   },
@@ -467,7 +527,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                       prefixStyle:
                                           TextStyle(color: Colors.grey),
-                                      hintText: 'Email Address',
+                                      hintText: 'Email address',
                                       enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),
@@ -506,7 +566,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   controller: confirmemailaddress,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter Confirm Email Address';
+                                      return 'Please enter Your confirm email address';
                                     }
                                     return null;
                                   },
@@ -516,7 +576,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                       prefixStyle:
                                           TextStyle(color: Colors.grey),
-                                      hintText: 'Confirm Email Address',
+                                      hintText: 'Confirm  email address',
                                       enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),
@@ -555,7 +615,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   controller: password,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'Please enter Password';
+                                      return 'Please enter Your password';
                                     }
                                     return null;
                                   },
@@ -601,15 +661,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Transform.scale(
-                                    scale: 0.8,
+                                    scale: 0.6,
                                     child: SizedBox(
-                                      height: 20.0,
-                                      width: 20.0,
+                                      height: 15.0,
+                                      width: 25.0,
                                       child: Checkbox(
                                           focusColor:
                                               Color.fromRGBO(252, 186, 24, 1),
@@ -632,11 +695,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          'By proceeding I agree to LifeCapture Media’s'),
+                                          'By proceeding i agree to LifeCapture Media’s', style: TextStyle(
+
+                                          fontSize: 13),),
                                       RichText(
                                           text: TextSpan(children: <TextSpan>[
                                         TextSpan(
-                                          text: "user Aggrement ",
+                                          text: "User Agreement ",
                                           style: TextStyle(
                                               color: Colors.deepPurple,
                                               fontSize: 13),
@@ -644,7 +709,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ..onTap = () {
                                               Navigator.push(
                                                 context,
-                                                MaterialPageRoute(
+                                                CupertinoPageRoute(
                                                     builder: (context) =>
                                                         User_Aggrement_Screen()),
                                               );
@@ -656,7 +721,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 color: Colors.black87,
                                                 fontSize: 13)),
                                         TextSpan(
-                                          text: " Privacy policy ",
+                                          text: " Privacy Policy ",
                                           style: TextStyle(
                                               color: Colors.deepPurple,
                                               fontSize: 13),
@@ -664,7 +729,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ..onTap = () {
                                               Navigator.push(
                                                 context,
-                                                MaterialPageRoute(
+                                                CupertinoPageRoute(
                                                     builder: (context) =>
                                                         Privacy_policy()),
                                               );
@@ -680,11 +745,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ))),
                   SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   Container(
-                      height: 40,
-                      width: 110,
+                      height:widget().height,
+                      width:widget().width,
                       child: MaterialButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
@@ -698,6 +763,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.white,
+                                fontSize: widget().fontsize,
                             ),
                           ),
                           onPressed: () {
@@ -705,11 +771,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               agree
                                   ? Navigator.push(
                                       context,
-                                      MaterialPageRoute(
+                                CupertinoPageRoute(
                                           builder: (context) =>
                                               Shipping_address(
                                                 confirmemailaddress:
-                                                    confirmemailaddress.text,
+                                                confirmemailaddress.text,
                                                 dateofbirth: dateofbirth.text,
                                                 emailaddress: Emailaddress.text,
                                                 firstname: firstname.text,

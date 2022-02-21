@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,7 +6,9 @@ import 'package:untitled/login/Dashboard_screens/Home_Screen.dart';
 import 'package:untitled/login/Forgot_Password_Screen.dart';
 import 'package:untitled/login/privacy_policy.dart';
 import 'package:untitled/login/user-Affrement.dart';
+import 'package:untitled/provider/page_transition.dart';
 import 'package:untitled/provider/provider.dart';
+import 'package:untitled/provider/widgets.dart';
 
 class Login_Screen extends StatefulWidget {
   const Login_Screen({Key? key}) : super(key: key);
@@ -37,7 +40,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     'Hi, Claire!',
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18,
+                        fontSize: widget().headingsize,
                         fontWeight: FontWeight.bold),
                   ))),
                   SizedBox(
@@ -48,11 +51,12 @@ class _Login_ScreenState extends State<Login_Screen> {
                           child: Column(
                     children: [
                       Text(
-                        'Sign In',
+                        'Sign in',
                         style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.bold,
-                          fontSize: 18,),
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                          fontSize: widget().headingsize,
+                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -156,15 +160,15 @@ class _Login_ScreenState extends State<Login_Screen> {
                                     //     const EdgeInsets.only(right: 35 / 1),
                                     child: InkWell(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              Forgot_Paswword_Screen()),
-                                    );
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) =>
+                                    //           Forgot_Paswword_Screen()),
+                                    // );
                                   },
                                   child: const Text(
-                                    "Forgot Username/Password?",
+                                    "Forgot username/password?",
                                     style: TextStyle(
                                       color: Color.fromRGBO(22, 97, 207, 10),
                                     ),
@@ -180,8 +184,8 @@ class _Login_ScreenState extends State<Login_Screen> {
                   ),
                   Consumer<mainprovider>(builder: (context, provider, child) {
                     return Container(
-                      height: 40,
-                      width: 110,
+                      height: widget().height,
+                      width: widget().width,
                       child: MaterialButton(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
@@ -191,6 +195,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             color: Colors.white,
+                            fontSize: widget().fontsize,
                           ),
                         ),
                         onPressed: () {
@@ -199,9 +204,16 @@ class _Login_ScreenState extends State<Login_Screen> {
                           //     ?
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => Home_Screen()),
                           );
+
+                          // Navigator.push(
+                          //   context,
+                          //   CupertinoPageRoute(
+                          //     maintainState: true,
+                          //       builder: (context) => Home_Screen()),
+                          // );
                         },
                       ),
                     );
@@ -215,7 +227,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         text: "By proceeding you agree to our ",
                         style: TextStyle(color: Colors.grey, fontSize: 12)),
                     TextSpan(
-                      text: "User Agreement ",
+                      text: "User agreement ",
                       style: TextStyle(
                         color: Colors.deepPurple,
                         fontSize: 12,
@@ -224,7 +236,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         ..onTap = () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => User_Aggrement_Screen()),
                           );
                         },
@@ -240,7 +252,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                       style: TextStyle(color: Colors.grey, fontSize: 12),
                     ),
                     TextSpan(
-                      text: "Privacy Policy",
+                      text: "Privacy policy",
                       style: TextStyle(
                         color: Colors.deepPurple,
                         fontSize: 12,
@@ -249,7 +261,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         ..onTap = () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                                 builder: (context) => Privacy_policy()),
                           );
                         },

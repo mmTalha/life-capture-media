@@ -1,8 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/cart/cart_Screen.dart';
 import 'package:untitled/disc_create/Select_video.dart';
+import 'package:untitled/login/Dashboard_screens/Drawer.dart';
 import 'package:untitled/login/verfication_email.dart';
+import 'package:untitled/provider/widgets.dart';
 
-class select_videos_screen extends StatefulWidget {
+  class select_videos_screen extends StatefulWidget {
   const select_videos_screen({Key? key}) : super(key: key);
 
   @override
@@ -15,24 +19,46 @@ class _select_videos_screenState extends State<select_videos_screen> {
     bool _flag = true;
     return Scaffold(
       backgroundColor: Colors.white,
+      drawerScrimColor: Colors.black,
       appBar: AppBar(
+
+        leadingWidth: 70,
+        leading:widget().appbar( ) ,
         centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.black),
         // leading: IconButton(
         //   icon: Icon(Icons.arrow_back, color: Colors.black),
         //   onPressed: () => Navigator.of(context).pop(),
         // ),
         backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Text(
-          'Select Videos to Upload',
-          style: TextStyle(
-              color: Color.fromRGBO(22, 97, 207, 10),
-              fontSize: 18,
-              fontWeight: FontWeight.bold),
+        title: Center(
+          child: Text(
+            'Select Videos to Upload',
+            style: TextStyle(
+                color:widget().colorheading,
+                fontSize: widget().headingsize,
+                fontWeight: FontWeight.bold),
+          ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => cart_Screen()),
+              );
+            },
+            icon: Icon(CupertinoIcons.cart_fill),
+            color: Colors.black,
+          )
+        ],
       ),
+      drawer: drawer_Screen(),
       body: Column(
         children: [
+
           Container(
             height: 520,
             child: ListView.builder(
@@ -46,6 +72,7 @@ class _select_videos_screenState extends State<select_videos_screen> {
                       onTap: () => setState(() => _flag = !_flag),
                       child: Container(
 
+
                           height: 100,
                           width: 400,
                           margin: const EdgeInsets.all(15.0),
@@ -56,6 +83,8 @@ class _select_videos_screenState extends State<select_videos_screen> {
                               
                               borderRadius: BorderRadius.circular(10)),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 height: 70,
@@ -67,7 +96,7 @@ class _select_videos_screenState extends State<select_videos_screen> {
                                   Padding(
                                     padding: const EdgeInsets.all(7.0),
                                     child: Text(
-                                      'Video Testing 01',
+                                      'Video testing 01',
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 15,
@@ -86,9 +115,7 @@ class _select_videos_screenState extends State<select_videos_screen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                width: 0,
-                              ),
+
                               ElevatedButton(
 
                                 style: ElevatedButton.styleFrom(
@@ -116,8 +143,8 @@ class _select_videos_screenState extends State<select_videos_screen> {
           ),
           Center(
             child: Container(
-              height: 50,
-              width: 250,
+              height: widget().height,
+              width: widget().width,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
@@ -127,12 +154,13 @@ class _select_videos_screenState extends State<select_videos_screen> {
                   style: TextStyle(
                     fontFamily: 'Roboto',
                     color: Colors.white,
+                    fontSize: widget().fontsize
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    CupertinoPageRoute(
                         builder: (context) => Select_sort_video_Screen()),
                   );
                 },

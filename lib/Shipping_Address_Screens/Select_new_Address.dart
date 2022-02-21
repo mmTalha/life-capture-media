@@ -1,7 +1,10 @@
 import 'package:dropdown_plus/dropdown_plus.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/cart/cart_Screen.dart';
+import 'package:untitled/login/Dashboard_screens/Drawer.dart';
 import 'package:untitled/login/loginscreen.dart';
+import 'package:untitled/provider/widgets.dart';
 import 'package:us_states/us_states.dart';
 
 class select_new_Address_screen extends StatelessWidget {
@@ -64,7 +67,32 @@ class select_new_Address_screen extends StatelessWidget {
     ];
     return Scaffold(
       backgroundColor: Colors.white,
+      drawerScrimColor: Colors.black,
       appBar: AppBar(
+        title: Text(
+          'Enter shipping Address',
+          style: TextStyle(
+            color:widget().colorheading,
+            fontWeight: FontWeight.bold,
+            fontSize: widget().headingsize,),
+        ),
+        centerTitle: true,
+        leadingWidth: 100,
+        leading:widget().appbar( ) ,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => cart_Screen()),
+              );
+            },
+            icon: Icon(CupertinoIcons.cart_fill),
+            color: Colors.black,
+          )
+        ],
+        iconTheme: IconThemeData(color: Colors.black),
         // leading: IconButton(
         //   icon: Icon(Icons.arrow_back, color: Colors.black),
         //   onPressed: () => Navigator.of(context).pop(),
@@ -72,6 +100,8 @@ class select_new_Address_screen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
+
+      drawer: drawer_Screen(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -79,15 +109,8 @@ class select_new_Address_screen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
-                    child: Container(
-                        child: Text(
-                  'Enter Shipping Address',
-                  style: TextStyle(
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold,
-                    fontSize: 18,),
-                ))),
+
+
                 SizedBox(
                   height: 5,
                 ),
@@ -96,11 +119,11 @@ class select_new_Address_screen extends StatelessWidget {
                         child: Column(
                   children: [
                     Text(
-                      'Life Capture Media does not share any  of',
+                      'Life capture media does not share any of',
                       style: TextStyle(color: Colors.black, fontSize: 15),
                     ),
                     Text(
-                      'your Information in any way ',
+                      'your information in any way ',
                       style: TextStyle(color: Colors.black, fontSize: 15),
                     ),
                     SizedBox(
@@ -192,7 +215,7 @@ class select_new_Address_screen extends StatelessWidget {
                                       fontFamily: 'Roboto',
                                     ),
                                     prefixStyle: TextStyle(color: Colors.grey),
-                                    hintText: 'Select City',
+                                    hintText: 'Select city',
                                     enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
@@ -270,7 +293,7 @@ class select_new_Address_screen extends StatelessWidget {
                                       fontFamily: 'Roboto',
                                     ),
                                     prefixStyle: TextStyle(color: Colors.grey),
-                                    hintText: 'Zip Code',
+                                    hintText: 'Zip code',
                                     enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
@@ -301,8 +324,8 @@ class select_new_Address_screen extends StatelessWidget {
                   height: 15,
                 ),
                 Container(
-                  height: 40,
-                  width: 110,
+                  height: widget().height,
+                  width: widget().width,
                   child: MaterialButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -312,12 +335,13 @@ class select_new_Address_screen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         color: Colors.white,
+                        fontSize: widget().fontsize
                       ),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => cart_Screen()),
+                        CupertinoPageRoute(builder: (context) => cart_Screen()),
                       );
                     },
                   ),

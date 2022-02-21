@@ -8,401 +8,404 @@ class Thankyou_screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-              child: Text(
-            'Thank you for your order!',
-            style: TextStyle(
-                color: Color.fromRGBO(22, 97, 207, 10),
-                fontSize: 18,
-                fontWeight: FontWeight.w400),
-          )),
-          Center(
-              child: Text(
-                'Your confirmation Number is',
-                style: TextStyle(
-                    color: Color.fromRGBO(179,192,199, 10),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400),
-              )),
-          SizedBox(height: 15,),
-          Center(
-              child: Text(
-                'LifeCapture 93c34sdetgh',
-                style: TextStyle(
-                    color: Color.fromRGBO(22, 97, 207, 10),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400),
-              )),
-          Center(
-              child: Text(
-                'You Will recieve a Confirmation',
-                style: TextStyle(
-                    color: Color.fromRGBO(179,192,199, 10),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400),
-              )),
-          Center(
-              child: Text(
-                'Shortly Via email.',
-                style: TextStyle(
-                    color: Color.fromRGBO(179,192,199, 10),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400),
-              )),
-          SizedBox(height: 25,),
-          Image.asset( 'images/thans.png',height: 100,),
-          new Center(
-              child: new Container(
-                margin: EdgeInsets.only(top: 10),
-                height: 340,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 20,),
+            Center(child: Image.asset('images/aboutlogo.png',height:80,)),
+            SizedBox(height: 30,),
+            Center(
+                child: Text(
+              'Thank you for your order!',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 21,
+                  fontWeight: FontWeight.bold),
+            )),
+            SizedBox(height: 10,),
+            Center(
+                child: Text(
+                  'Your confirmation number is',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400),
+                )),
+
+            Center(
+                child: Text(
+                  'Lifecapture 93c34sdetgh',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400),
+                )),
+            SizedBox(height: 10,),
+            Center(
+                child: Text(
+                  'You will recieve a confirmation',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400),
+                )),
+            Center(
+                child: Text(
+                  'Shortly via email.',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400),
+                )),
+            SizedBox(height: 25,),
+
+            Center(
+              child: Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                height: 40,
                 width: 300,
                 decoration: new BoxDecoration(
-                    color: Color.fromRGBO( 245,245,245,5 ),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                    border: Border.all(color: Colors.black),
+                    // color: Color.fromRGBO(245, 245, 245, 5),
+                    // color: Color.fromRGBO(223, 248, 255,1),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                      child: Column(
+                    Text(
+                      'Test disc 01',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 80,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            new Center(
+                child: new Container(
+                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(left: 10,right: 15,top: 10),
+                  height: 140,
+                  width: 300,
+                  decoration: new BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      // color: Color.fromRGBO(245, 245, 245, 5),
+                      // color: Color.fromRGBO(223, 248, 255,1),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          Text(' ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
                           Row(
                             children: [
-                              Text(
-                                'Test Disc 01',
-                                style: TextStyle(
-                                    color:Colors.black ,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
+                              Text('Qty',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                width: 15,
                               ),
-
+                              Text('Price',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
                             ],
                           ),
-                          Divider(
-                            thickness: 2.0,
-                          ),
-
                         ],
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Product',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize:20,
-                            fontWeight: FontWeight. w400),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                      child: Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
-                          // Row(
-                          //   children: [
-                          //     Text(
-                          //       'Test Disc 01',
-                          //       style: TextStyle(
-                          //           color: Colors.grey,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight.bold),
-                          //     ),
-                          //     SizedBox(
-                          //       width: 50,
-                          //     ),
-                          //     Text(
-                          //       'Divsn Pixel Agency',
-                          //       style: TextStyle(
-                          //           color: Colors.black ,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight. w400),
-                          //     ),
-                          //   ],
-                          // ),
-                          //
-                          // Row(
-                          //
-                          //   children: [
-                          //     Text(
-                          //       'Format',
-                          //       style: TextStyle(
-                          //           color: Colors.grey,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight.bold),
-                          //     ),
-                          //     SizedBox(
-                          //       width:90,
-                          //     ),
-                          //     Text(
-                          //       'DVD',
-                          //       style: TextStyle(
-                          //           color: Colors.black ,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight. w400),
-                          //     ),
-                          //   ],
-                          // ),
-                          // Row(
-                          //
-                          //   children: [
-                          //     Text(
-                          //       'Number of Copies',
-                          //       style: TextStyle(
-                          //           color: Colors.grey,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight.bold),
-                          //     ),
-                          //     SizedBox(
-                          //       width: 60,
-                          //     ),
-                          //     Text(
-                          //       '1',
-                          //       style: TextStyle(
-                          //           color: Colors.black ,
-                          //           fontSize: 15,
-                          //           fontWeight: FontWeight. w400),
-                          //     ),
-                          //   ],
-                          // ),
+                          Text('Blu-ray',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment. spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Product',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
+                              Text('1',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                width: 15,
                               ),
-
+                              Text('25.00',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('DVD',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Row(
+                            children: [
+                              Text('2',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text('28.00',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Shipping',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Text('Free',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Total',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Text('100.00',
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ],
+                  ),
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            // Center(
+            //   child: Container(
+            //     // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            //     padding: EdgeInsets.only(left: 15, right: 15),
+            //     height: 50,
+            //     width: 300,
+            //     decoration: new BoxDecoration(
+            //         // color: Color.fromRGBO(245, 245, 245, 5),
+            //         // color: Color.fromRGBO(223, 248, 255,1),
+            //         color: Colors.white,
+            //         borderRadius: BorderRadius.circular(10)),
+            //     child:
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       crossAxisAlignment: CrossAxisAlignment.center,
+            //       children: [
+            //         Text(
+            //           'Shipping address',
+            //           style: TextStyle(
+            //               color: Colors.black,
+            //               fontSize: 15,
+            //               fontWeight: FontWeight.bold),
+            //         ),
+            //         // SizedBox(
+            //         //   width: 50,
+            //         // ),
+            //         Row(
+            //           children: [
+            //             Text(
+            //               'Edit',
+            //               style: TextStyle(
+            //                   color: Colors.black,
+            //                   fontSize: 15,
+            //                   fontWeight: FontWeight.bold),
+            //             ),
+            //             SizedBox(
+            //               width: 5,
+            //             ),
+            //             Text(
+            //               'Remove',
+            //               style: TextStyle(
+            //                   color: Colors.black,
+            //                   fontSize: 15,
+            //                   fontWeight: FontWeight.bold),
+            //             )
+            //           ],
+            //         )
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              height: 10,
+            ),
+            new Center(
+                child: new Container(
+                  height: 110,
+                  width: 310,
+                  decoration: new BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      // color: Color.fromRGBO(245, 245, 245, 5),
+                      // color: Color.fromRGBO(223, 248, 255,1),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+                        child: Column(
+                          children: [
                             Row(
                               children: [
                                 Text(
-                                  'Qty',
+                                  'Shipping Address',
                                   style: TextStyle(
-                                      color: Colors.black ,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight. bold),
-                                ),
-                                SizedBox(width: 10,),
-                                Text(
-                                  ' Price',
-                                  style: TextStyle(
-                                      color: Colors.black ,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight. bold),
-                                ),
-                              ],
-                            )
-                            ],
-                          ),
-                          SizedBox(height: 10,),
-                          Container(
-
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Blue-ray Disc :',
-                                  style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
-
-                                Row(
-
-                                  children: [
-                                    Text(
-                                      '01',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                    SizedBox(width: 10/1,),
-                                    Text(
-                                      '25.00',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                                SizedBox(
+                                  width: 70,
+                                ),
                                 Text(
-                                  'Number of Copies',
+                                  ' Edit',
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
-
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      '02',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                    SizedBox(width: 10/1,),
-                                    Text(
-                                      '28.00'
-                                           ,
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                                SizedBox(
+                                  width: 5,
+                                ),
                                 Text(
-                                  'Shipping',
+                                  'Remove',
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
-                                ),
-
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-
-                                    SizedBox(width: 10/1,),
-                                    Text(
-                                      'Free'
-                                      ,
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                  ],
                                 )
                               ],
                             ),
-                          ),
-                          SizedBox(height: 10,),
-                          Divider(
-                            thickness: 2.0,
-                          ),
-                          SizedBox(height: 10,),
 
-                          // Container(
-                          //   color: Colors.greenAccent,
-                          //   child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //     crossAxisAlignment: CrossAxisAlignment.start,
-                          //     children: [
-                          //       Text(
-                          //         'Price',
-                          //         style: TextStyle(
-                          //             color:  Color.fromRGBO(120,144,156,300),
-                          //             fontSize: 20,
-                          //             fontWeight: FontWeight.bold),
-                          //       ),
-                          //
-                          //       Text(
-                          //         ' 105',
-                          //         style: TextStyle(
-                          //             color: Color.fromRGBO(120,144,156,300) ,
-                          //             fontSize: 20,
-                          //             fontWeight: FontWeight. bold),
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
-                          Container(
-                            height: 60,
-                            width: 250,
-                            child: MaterialButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              color: Color.fromRGBO(156,204,101,10),
-                              child:
-                              Container(
-
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Order Total',
-                                      style: TextStyle(
-                                          color:  Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-
-                                    Text(
-                                      ' 105',
-                                      style: TextStyle(
-                                          color: Colors.white ,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight. bold),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => cart_Screen()),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    // Container(
-                    //
-                    //     child: Text(
-                    //   'Product',
-                    //   style: TextStyle(
-                    //       color: Colors.black,
-                    //       fontSize: 15,
-                    //       fontWeight: FontWeight.bold),
-                    // )),
-                  ],
-                ),
-              )),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
 
-        ],
-      ),
+                        // padding:
+                        //     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Bob k Pietro',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            ),
+                            Text(
+                              '55 any street philipines',
+                              style: TextStyle(color: Colors.black, fontSize: 15),
+                            ),
+                            Text(
+                              'Georgia - 856321',
+                              style: TextStyle(color: Colors.black, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Container(
+                      //
+                      //     child: Text(
+                      //   'Product',
+                      //   style: TextStyle(
+                      //       color: Colors.black,
+                      //       fontSize: 15,
+                      //       fontWeight: FontWeight.bold),
+                      // )),
+                    ],
+                  ),
+                )),
+            SizedBox(
+              height: 20,
+            ),
+                      // Container(
+                      //
+                      //     child: Text(
+                      //   'Product',
+                      //   style: TextStyle(
+                      //       color: Colors.black,
+                      //       fontSize: 15,
+                      //       fontWeight: FontWeight.bold),
+                      // )),
+                    ],
+                  ),
+                )
+
     );
   }
 }

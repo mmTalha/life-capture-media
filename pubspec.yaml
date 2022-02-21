@@ -34,11 +34,13 @@ dependencies:
   dropdown_plus: ^0.0.9
   country_state_city_picker: ^1.2.8
   provider: ^5.0.0
-  animated_splash_screen: ^1.1.0
+
+#  animated_splash_screen: ^1.1.0
   http: ^0.13.0
   us_states: ^1.1.5
   flutter_holo_date_picker: ^1.0.1+2
   intl: ^0.17.0
+#  page_transition: ^2.0.4
 
 
 
@@ -64,6 +66,14 @@ flutter:
      - images/newlogo.png
      - images/last.png
      - images/aboutlogo.png
+     - images/logo.png
+     - images/visa.jpg
+     - images/masterlogo.png
+     - images/paypal.jpg
+     - images/gpay.png
+     - images/discovercard.png
+     - images/applepay.png
+     - images/americanexpress.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

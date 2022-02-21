@@ -15,10 +15,7 @@ class _Update_Acount_ScreenState extends State<Update_Acount_Screen> {
     TextEditingController dateofbirth = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+
         backgroundColor: Colors.white,
         elevation: 0.0,
 

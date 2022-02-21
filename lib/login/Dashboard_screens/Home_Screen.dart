@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/cart/cart_Screen.dart';
 import 'package:untitled/login/Dashboard_screens/Drawer.dart';
 import 'package:untitled/login/Dashboard_screens/pending.dart';
+import 'package:untitled/provider/widgets.dart';
 
 import '../loginscreen.dart';
 import '../shippingadree.dart';
@@ -15,20 +16,23 @@ class Home_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         backgroundColor: Colors.white,
         drawerScrimColor: Colors.black,
         appBar: AppBar(
 
-          centerTitle: true,
+          leadingWidth: 100,
+          leading:widget().appbar( ) ,
+         centerTitle: true,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
           elevation: 0.0,
-          title: Text(
+          title:Text(
             'Dashboard',
             style: TextStyle(
-                color: Color.fromRGBO(22, 97, 207, 10),
-              fontSize: 18,
-                fontWeight: FontWeight.bold,),
+              color:widget().colorheading,
+              fontSize: widget().headingsize,
+              fontWeight: FontWeight.bold,),
           ),
           actions: [
             IconButton(
@@ -69,7 +73,7 @@ class Home_Screen extends StatelessWidget {
                             child:
                             Center(child: Text( 'History')),
                           ),
-                          Tab(icon:Text( 'Orders'
+                          Tab(icon:Text( 'Processing'
                               '')),
                         ],
                       )),
@@ -81,7 +85,9 @@ class Home_Screen extends StatelessWidget {
                         Pending_screen(),
                       ],
                     ),
-                  )
+                  ),
+
+
                 ],
               )),
         ));

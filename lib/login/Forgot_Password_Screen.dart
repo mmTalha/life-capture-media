@@ -8,21 +8,12 @@ class Forgot_Paswword_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Text(
-          'Forgot Password',
-          style: TextStyle(
-              color: Color.fromRGBO(22, 97, 207, 10),
-              fontSize: 18,
-              fontWeight: FontWeight.bold),
-        ),
+
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +22,7 @@ class Forgot_Paswword_Screen extends StatelessWidget {
           Container(
             child: Center(
                 child: Text(
-              'Forgot Your Password?',
+              'Forgot Username/Password?',
               style: TextStyle(
                   color: Colors.orange,
                   fontSize: 20,
@@ -45,19 +36,20 @@ class Forgot_Paswword_Screen extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  Text('To recover your Password You need to '),
-                  Text('enter your registered email address. '),
-                  Text('we will send the recovery code '),
-                  Text('to your email. '),
+                  Text('To change your Username/Reset Password, \nplease  enter the email address associated with your account.You will receive an email that will display your Username, and that contains instructions as to how to reset your password.',textAlign: TextAlign.center,  ),
+
+                  // Text('To change your Username/Reset Password,'),
+                  // Text('please enter the email address associated with '),
+                  // Text('your account. You will receive an email that will display your email that will display',textAlign: TextAlign.center,),
+                  // Text(' your Username, and that contains instructions as to how to reset your password.'),
                 ],
               ),
             ),
           ),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
+          Center(
             child: Text(
               'Email Address',
               style: TextStyle(color: Colors.grey, fontSize: 15),
@@ -102,14 +94,14 @@ class Forgot_Paswword_Screen extends StatelessWidget {
           ),
           Center(
             child: Container(
-              height: 50,
-              width: 190,
+              height: 40,
+              width: 110,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 color: Color.fromRGBO(22, 97, 207, 10),
                 child: Text(
-                  'Send  Activation Code',
+                  'Send Email',
                   style: TextStyle(
                     fontFamily: 'Roboto',
                     color: Colors.white,

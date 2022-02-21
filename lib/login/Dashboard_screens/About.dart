@@ -12,10 +12,7 @@ class About_screen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(

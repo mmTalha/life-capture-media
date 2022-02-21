@@ -42,7 +42,7 @@ class onboradingscreen_1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                             builder: (context) => MyHomePage(
                                   title: 'juiku8i',
                                 )),
@@ -67,7 +67,7 @@ class onboradingscreen_1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Login_Screen()),
+                        CupertinoPageRoute(builder: (context) => Login_Screen()),
                       );
                     },
                   ),
