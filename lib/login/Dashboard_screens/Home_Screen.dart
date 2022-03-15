@@ -16,31 +16,29 @@ class Home_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         backgroundColor: Colors.white,
         drawerScrimColor: Colors.black,
         appBar: AppBar(
-
           leadingWidth: 100,
-          leading:widget().appbar( ) ,
-         centerTitle: true,
+          leading: widget().appbar(),
+          centerTitle: true,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
           elevation: 0.0,
-          title:Text(
+          title: Text(
             'Dashboard',
             style: TextStyle(
-              color:widget().colorheading,
+              color: widget().colorheading,
               fontSize: widget().headingsize,
-              fontWeight: FontWeight.bold,),
+              fontWeight: FontWeight.bold,
+            ),
           ),
           actions: [
             IconButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => cart_Screen()),
+                  MaterialPageRoute(builder: (context) => cart_Screen()),
                 );
               },
               icon: Icon(CupertinoIcons.cart_fill),
@@ -50,31 +48,28 @@ class Home_Screen extends StatelessWidget {
         ),
         drawer: drawer_Screen(),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: DefaultTabController(
               length: 2,
               child: Column(
                 children: <Widget>[
                   Container(
                       padding: EdgeInsets.all(5),
-
-                      height:60,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(226,232,240,40),
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(226, 232, 240, 40),
+                          borderRadius: BorderRadius.circular(10)),
                       child: TabBar(
-
-                        indicator: BoxDecoration(color: Colors.orange,borderRadius: BorderRadius.circular(10)),
+                        indicator: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10)),
                         tabs: [
                           Tab(
-
-                            child:
-                            Center(child: Text( 'History')),
+                            child: Center(child: Text('History')),
                           ),
-                          Tab(icon:Text( 'Processing'
-                              '')),
+                          Tab(
+                              icon: Text('Processing'
+                                  '')),
                         ],
                       )),
                   Expanded(
@@ -86,8 +81,6 @@ class Home_Screen extends StatelessWidget {
                       ],
                     ),
                   ),
-
-
                 ],
               )),
         ));
